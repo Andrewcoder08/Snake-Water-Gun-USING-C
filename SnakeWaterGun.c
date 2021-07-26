@@ -43,7 +43,7 @@ int snakeWaterGun(char you, char comp)
 char gen()
 {
     int number;
-    char comp;
+    char comp; // choice of computer
     srand(time(0)); // time 0 returns time in seconds and gives new value every time we run the program
     number = rand() % 100 + 1;
 
@@ -65,17 +65,17 @@ char gen()
 int main()
 {
     char you, comp, ch = 'Y';
-    int a;
+    int a; //this will help us decide if we wanna play again or not, 1 means yes, 0 means no
     int ctr = 0;
     int myscore=0;
     int compscore=0;
 
     while (ch == 'Y')
     {
-        if (ctr == 0)
+        if (ctr == 0) // ctr 0 is because, we will play the game atleast once and then we will decide if we want to continue or not
         {
-            comp=gen();
-            printf(" COMPUTER CHOOSE %c \n",comp);
+            comp=gen();// getting what computer took
+            // p-1rintf(" COMPUTER CHOOSE %c \n",comp);  uncpmment this to see what computer choose
             printf("Choose s for Snake, w for water, g for gun \n");
             scanf("%c", &you);
             int result = snakeWaterGun(you, comp);
@@ -103,7 +103,7 @@ int main()
             if (a == 1)
             {
                 comp=gen();
-                printf(" COMPUTER CHOOSE %c \n",comp);
+                // printf(" COMPUTER CHOOSE %c \n",comp);
 
                 printf("Choose s for Snake, w for water, g for gun \n");
                 scanf(" %c", &you);
